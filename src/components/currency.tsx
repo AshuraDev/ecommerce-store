@@ -16,5 +16,5 @@ export const Currency = ({ value }: CurrencyProps) => {
 
   if (!isMounted) return null;
 
-  return <div className="font-semibold">{formatPrice(Number(value))}</div>;
+  return <span className="font-semibold">{formatPrice(Number(value))}</span>;
 };

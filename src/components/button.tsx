@@ -8,7 +8,7 @@ export interface ButtonProps
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, disabled }, ref) => {
+  ({ className, children, disabled,...props }, ref) => {
     return (
       <button
         className={cn(
@@ -19,6 +19,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         ref={ref}
+        {...props}
         disabled={disabled}
       >
         {children}
