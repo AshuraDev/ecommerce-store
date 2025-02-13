@@ -8,7 +8,7 @@ import { ProductList } from "@/components/home/product-list";
 
 const Home = async () => {
   const featuredProducts = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("7aa54be0-d6e0-42b7-b5cb-6692583ede95");
+  const billboard = await getBillboard("7f620593-65a9-4d9b-8634-7f8d083f6fdb");
   return (
     <Container>
       <div className="space-y-10 pb-10">
