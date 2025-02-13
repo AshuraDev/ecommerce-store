@@ -8,9 +8,7 @@ import { Gallery } from "@/components/product/gallery";
 import { ProductList } from "@/components/home/product-list";
 
 interface ProductPageProps {
-  params: {
-    productId: string;
-  };
+  params: Promise<{ productId: string }>;
 }
 
 const ProductPage = async ({ params }: ProductPageProps) => {

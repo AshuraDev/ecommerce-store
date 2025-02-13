@@ -12,13 +12,8 @@ import { ProductCard } from "@/components/product-card";
 import MobileFilters from "@/components/category/mobile-filters";
 
 interface CategoryPageProps {
-  params: {
-    categoryId: string;
-  };
-  searchParams: {
-    colorId: string;
-    sizeId: string;
-  };
+  params: Promise<{ categoryId: string }>;
+  searchParams: Promise<{ colorId: string; sizeId: string }>;
 }
 
 const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
@@ -41,10 +36,10 @@ const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
         <Billboard data={category?.billboard || null} />
         <div className="px-4 sm:px-6 lg:px-8 pb-24">
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
-            <MobileFilters sizes= {sizes} colors={colors}/>
+            <MobileFilters sizes={sizes} colors={colors} />
             <div className="hidden lg:block">
               <Filter valueKey="sizeId" name="Tailles" data={sizes} />
-              <Filter valueKey="sizeId" name="Couleurs" data={colors} />
+              <Filter valueKey="colorId" name="Couleurs" data={colors} />
             </div>
             <div className="mt-6 lg:col-span-4 lg:mt-0">
               {products.length === 0 && <NoResult />}
