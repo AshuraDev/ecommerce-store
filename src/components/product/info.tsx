@@ -45,7 +45,7 @@ export const Info = ({ data }: InfoProps) => {
       </div>
       <div className="mt-10 flex items-center gap-x-3">
         <Button className="flex items-center gap-x-2" onClick={onAddToCart}>
-          Add To Cart
+          Ajouter au panier
           <ShoppingCart />
         </Button>
       </div>
